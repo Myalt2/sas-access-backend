@@ -12,7 +12,7 @@ const faqPath = path.resolve(__dirname, 'faq.json');
 const faq     = JSON.parse(fs.readFileSync(faqPath, 'utf-8'));
 
 app.post('/commande', (req, res) => {
-  const raw     = req.body.message || '';
+  const raw     = req.body.commande || '';
   const key     = raw.toLowerCase().trim();
   const answer  = faq[key] 
     || "Désolé, je n'ai pas la réponse à cette question. Puis-je vous aider autrement";
